@@ -2,12 +2,12 @@
 
 <img height="300" src="https://xperroni.github.io/dokka/2017_dokka_03.png">
 
-DOKKA is a collection of BASH scripts to package software development stacks as docker images. Containers are seamlessly integrated to the host environment as they are instantiated, making possible to keep project files and general-purpose applications (such as text editor and version control clients) on the host.
+DOKKA is a collection of BASH scripts to package software development stacks as Docker images. Containers are seamlessly integrated to the host environment as they are instantiated, making possible to keep project files and general-purpose applications (such as text editor and version control clients) on the host.
 
 ## Dependencies
 
 * [BASH](https://www.gnu.org/software/bash/) >= 4.0
-* [docker](https://www.docker.com/) >= 1.0
+* [Docker](https://www.docker.com/) >= 1.0
 * [screen](https://www.gnu.org/software/screen/) >= 4.0
 
 ## Install
@@ -18,11 +18,11 @@ DOKKA is a collection of BASH scripts to package software development stacks as 
 
 ## Usage
 
-DOKKA includes some conveniences for setting up custom docker images. Use `dokka root` To create a container from a pre-existing image and enter a shell session on it, for example:
+DOKKA includes some conveniences for setting up custom Docker images. Use `dokka root` To create a container from a pre-existing image and enter a shell session on it, for example:
 
     $ dokka root ubuntu:17.04
 
-This will create a container from the `ubuntu:17.04` image (downloading it from docker's repository if not yet available) and start a shell session on it logged to the root user. Additionally the host's current folder will be mapped to the instance, so files can be easily exchanged between the two. Package installation and other customizations can be performed in the usual manner, for example to install Jupyter Notebook type:
+This will create a container from the `ubuntu:17.04` image (downloading it from Docker's repository if not yet available) and start a shell session on it logged to the root user. Additionally the host's current folder will be mapped to the instance, so files can be easily exchanged between the two. Package installation and other customizations can be performed in the usual manner, for example to install Jupyter Notebook type:
 
     $ apt-get update
     $ apt-get install python3-pip
@@ -40,7 +40,9 @@ This will instantiate a container for the given image on the background and run 
 
     (python:3) $ dokka exec jupyter notebook
 
-New screen tabs can be created by typing `Ctrl+a c` (i.e. first type `Ctrl+a`, then release the keys and type `c`). Use `Ctrl+a n` (for "next) and `Ctrl+a p` (for "previous") to move along tabs. To unplug the image, simply `exit` from all screen tabs.
+New screen tabs can be created by typing `Ctrl+a c` (i.e. first type `Ctrl+a`, then release the keys and type `c`). Use `Ctrl+a n` (for "next) and `Ctrl+a p` (for "previous") to move along tabs. As with `dokka root` the host's current folder is mapped to the instance, so it can access all files on it and its subfolders (but not any parent folders).
+
+To unplug the image, simply `exit` from all screen tabs.
 
 Preceding commands with `dokka exec` can be tiresome and error-prone. To add aliases to those commands that should always be sent to the plugged instance, create a `host.bashrc` file inside a `<image name>/<image version>` subfolder of DOKKA's base folder (i.e. the folder where DOKKA scripts are located), then include appropriate `alias` entries in that file. For example:
 
