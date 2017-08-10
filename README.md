@@ -57,8 +57,3 @@ Now the next time the `python:3` image is plugged to the host environment, `jupy
     (python:3) $ jupyter notebook
 
 The last command will be equivalent to `dokka exec jupyter notebook`.
-
-## Known Bugs
-
-* Interactive commands (e.g. running Python in interactive mode) hang when invoked through `dokka exec`;
-* When a `dokka exec` command is interrupted with `Ctrl+c` the running process on the instance is not interrupted.
