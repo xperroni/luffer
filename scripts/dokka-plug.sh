@@ -2,6 +2,7 @@
 
 export DOKKA_IMAGE=$1
 export DOKKA_PLUGGED=${1//:/_}
+export DOKKA_PLUGGED_DIR="$DOKKA_HOME/${DOKKA_IMAGE//://}"
 
 PLUG_CUSTOM="$DOKKA_HOME/${1//://}/plug.sh"
 
