@@ -1,8 +1,3 @@
-source "$HOME/.bashrc"
-
-# Change the terminal prompt
-export PS1='(lcad) '$PS1
-
 # Java
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 
@@ -15,8 +10,5 @@ export QT_X11_NO_MITSHM=1
 # MAE
 export MAEHOME=$HOME/LCAD/src/MAE
 export PATH=$PATH:$MAEHOME/bin
-
-# Change into base directory for LCAD projects
-cd "$CARMEN_HOME"
 
 export LD_LIBRARY_PATH="/usr/local/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH"

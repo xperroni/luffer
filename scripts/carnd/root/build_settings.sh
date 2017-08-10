@@ -1,1 +1,0 @@
-PARENT_IMAGE="ubuntu:14.04"
