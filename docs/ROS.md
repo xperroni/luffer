@@ -62,6 +62,10 @@ Will call the `roscore` command on the container. Any command not in the list ab
 
     (osrf/ros:kinetic-desktop-full) $ dokka exec rosdep update
 
+## Development Environments
+
+One difficulty using DOKKA for ROS development is the need to `source devel/setup.sh` in order to update the `$PATH` and other environment parameters. Configuration file `$DOKKA_HOME/osrf/ros/kinetic-desktop-full/exec.bashrc` gets around this by adding `source devel/setup.sh` to the execution setup when a command is ran from a workspace base folder.
+
 ## References
 
 * [Getting started with ROS and Docker](http://wiki.ros.org/docker/Tutorials/Docker)
