@@ -1,0 +1,10 @@
+alias catkin_create_pkg='dokka exec catkin_create_pkg'
+alias catkin_init_workspace='dokka exec catkin_init_workspace'
+alias catkin_make='dokka exec catkin_make'
+
+alias roscore='dokka exec roscore'
+alias roslaunch='dokka exec roslaunch'
+alias rosmsg='dokka exec rosmsg'
+alias rosnode='dokka exec rosnode'
+alias rosrun='dokka exec rosrun'
+alias rostopic='dokka exec rostopic'
