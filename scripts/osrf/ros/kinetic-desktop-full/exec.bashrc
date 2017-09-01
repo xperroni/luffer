@@ -8,4 +8,7 @@ source /opt/ros/kinetic/setup.bash
 if [ -e "devel/setup.bash" ]
 then
     source devel/setup.bash
+elif [ -e "devel_isolated/setup.bash" ]
+then
+    source devel_isolated/setup.bash
 fi

@@ -41,7 +41,7 @@ To instantiate the ROS image and connect it to your current shell session on the
     $ dokka plug osrf/ros:kinetic-desktop-full
     (osrf/ros:kinetic-desktop-full) $
 
-This will also load the extra settings included in `$DOKKA_HOME/osrf/ros/kinetic-desktop-full/host.bashrc`, which include a number of aliases to common ROS commands:
+This will also load the extra settings included in `$DOKKA_HOME/osrf/ros/kinetic-desktop-full/host.bashrc`, which include a number of aliases to common ROS commands, for example:
 
     alias catkin_create_pkg='dokka exec catkin_create_pkg'
     alias catkin_init_workspace='dokka exec catkin_init_workspace'
