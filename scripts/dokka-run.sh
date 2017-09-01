@@ -3,9 +3,6 @@
 IMAGE=$1
 START=$2
 
-echo $1
-echo $2
-
 docker run -it \
     -e DOKKA_HOME \
     -e DISPLAY \
