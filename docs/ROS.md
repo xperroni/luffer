@@ -20,6 +20,7 @@ Dependingon your pruposes, you may want to customize the original ROS image with
 
 This will open a root shell session on the running container. From there you can use standard Linux commands to make changes as you see fit, e.g. to install additional packages:
 
+    # apt-get update
     # apt-get install ros-kinetic-controller-manager \
                       ros-kinetic-gazebo-ros-control \
                       ros-kinetic-joint-state-controller \
