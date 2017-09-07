@@ -3,6 +3,12 @@
 IMAGE=$1
 START=$2
 
+if [ "$(pwd)" == "$HOME" ]
+then
+    echo "Error: DOKKA cannot be run from the current user's home directory." 1>&2
+    exit 1
+fi
+
 docker run -it \
     -e DOKKA_HOME \
     -e DISPLAY \
