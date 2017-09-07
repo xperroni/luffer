@@ -28,7 +28,7 @@ This will open a root shell session on the running container. From there you can
 
 Depending on your host configuration, you may also have to install extra video drivers on the image. For example, in my system I have the `nvidia-375` package installed on the host, so in order for 3D graphics to work on the running container I also need the same drivers installed there:
 
-    # apt-get install --no-install-recommends nvidia-375
+    # apt-get install -y --no-install-recommends nvidia-375
 
 Once you're done with customizations, exit the session to terminate the container and commit changes to the originating image:
 
