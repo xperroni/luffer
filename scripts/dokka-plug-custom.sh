@@ -8,7 +8,12 @@ $DOKKA_HOME/dokka-run.sh $* --name $DOKKA_PLUGGED -d \
     --volume="/etc/passwd:/etc/passwd:ro" \
     --volume="/etc/shadow:/etc/shadow:ro" \
     --volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
-    > /dev/null 2>&1
+    > /dev/null
+
+if [ $? == 1 ]
+then
+    exit 1
+fi
 
 $DOKKA_HOME/dokka-screen.sh
 
