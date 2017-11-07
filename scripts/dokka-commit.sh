@@ -10,3 +10,4 @@ then
 fi
 
 docker commit $CONTAINER $IMAGE
+docker rm $CONTAINER
