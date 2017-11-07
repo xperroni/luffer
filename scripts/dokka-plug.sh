@@ -1,11 +1,11 @@
 #!/bin/bash
 
 export DOKKA_IMAGE=$1
-export DOKKA_PLUGGED=${1//[:\/]/_}
-export DOKKA_PLUGGED_DIR="$DOKKA_HOME/${1//://}"
-export DOKKA_PLUGGED_HOME="$DOKKA_PLUGGED_DIR/home"
+export DOKKA_IMAGE_NAME=${1//[:\/]/_}
+export DOKKA_IMAGE_DIR="$DOKKA_HOME/${1//://}"
+export DOKKA_IMAGE_HOME="$DOKKA_IMAGE_DIR/home"
 
-mkdir -p "$DOKKA_PLUGGED_HOME"
+mkdir -p "$DOKKA_IMAGE_HOME"
 
 PLUG_CUSTOM="$DOKKA_HOME/${1//://}/plug.sh"
 
