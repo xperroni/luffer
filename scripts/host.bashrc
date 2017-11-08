@@ -1,7 +1,7 @@
 source "$HOME/.bashrc"
 
 # Change the terminal prompt.
-export PS1="($DOKKA_IMAGE) $PS1"
+export PS1="($LUFFER_IMAGE) $PS1"
 
 scr_cd() {
     cd $1
@@ -13,7 +13,7 @@ scr_cd() {
 alias cd='scr_cd'
 
 # Run image host config, if it exists.
-HOST_BASHRC="$DOKKA_IMAGE_DIR/host.bashrc"
+HOST_BASHRC="$LUFFER_IMAGE_DIR/host.bashrc"
 if [ -e "$HOST_BASHRC" ]
 then
     source $HOST_BASHRC

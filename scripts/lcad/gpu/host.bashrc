@@ -1,3 +1,3 @@
-alias make='dokka exec make'
-alias central='dokka exec ./central'
-alias proccontrol='dokka exec ./proccontrol'
+alias make='luffer exec make'
+alias central='luffer exec ./central'
+alias proccontrol='luffer exec ./proccontrol'

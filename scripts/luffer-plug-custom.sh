@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # If there's already a running container by the given name...
-if [ $(docker ps -q -f "name=$DOKKA_IMAGE_NAME") ]
+if [ $(docker ps -q -f "name=$LUFFER_IMAGE_NAME") ]
 then
     exit 1
 fi
 
 # Create a new running container by the given name.
-$DOKKA_HOME/dokka-run.sh $* --name $DOKKA_IMAGE_NAME -d \
+$LUFFER_HOME/luffer-run.sh $* --name $LUFFER_IMAGE_NAME -d \
     --user="$(id -u):$(id -g)" \
     $(for gid in $(id -G); do echo -n "--group-add $gid "; done) \
-    --volume="$DOKKA_IMAGE_HOME:$HOME" \
+    --volume="$LUFFER_IMAGE_HOME:$HOME" \
     --volume="/etc/group:/etc/group:ro" \
     --volume="/etc/passwd:/etc/passwd:ro" \
     --volume="/etc/shadow:/etc/shadow:ro" \
@@ -24,9 +24,9 @@ then
 fi
 
 # Start screen session.
-$DOKKA_HOME/dokka-screen.sh
+$LUFFER_HOME/luffer-screen.sh
 
 # After screen session finishes, stop and delete the container.
-docker stop $DOKKA_IMAGE_NAME > /dev/null 2>&1
-docker rm $DOKKA_IMAGE_NAME > /dev/null 2>&1
+docker stop $LUFFER_IMAGE_NAME > /dev/null 2>&1
+docker rm $LUFFER_IMAGE_NAME > /dev/null 2>&1
 
