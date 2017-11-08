@@ -1,6 +1,6 @@
 # Luffer
 
-<img height="300" src="https://xperroni.github.io/luffer/2017_luffer_03.png">
+<img align="right" height="300" src="https://xperroni.github.io/luffer/2017_luffer_03.png">
 
 Luffer is a collection of BASH scripts to package software development stacks as Docker images. Containers are seamlessly integrated to the host environment as they are instantiated, making possible to keep project files and general-purpose applications (such as text editor and version control clients) on the host.
 
