@@ -6,7 +6,6 @@ alias catkin_make_isolated='luffer exec catkin_make_isolated'
 alias rosbag='luffer exec rosbag'
 alias roscore='luffer exec roscore'
 alias rosclean='luffer exec rosclean'
-alias rosdep='luffer exec rosdep'
 alias roslaunch='luffer exec roslaunch'
 alias rosmsg='luffer exec rosmsg'
 alias rosnode='luffer exec rosnode'
@@ -15,3 +14,13 @@ alias rosservice='luffer exec rosservice'
 alias rostopic='luffer exec rostopic'
 
 alias rqt='luffer exec rqt'
+
+# Run rosdep init in root mode, but other commands in user mode.
+function rosdep {
+    if [ "$1" == "init" ]
+    then
+        luffer sudo rosdep init
+    else
+        luffer exec rosdep "$@"
+    fi
+}

@@ -6,6 +6,9 @@ then
     exit 1
 fi
 
+# Remove the occasional stale container.
+docker rm $LUFFER_IMAGE_NAME > /dev/null 2>&1
+
 # Create a new running container by the given name.
 $LUFFER_HOME/luffer-run.sh $* --name $LUFFER_IMAGE_NAME -d \
     --user="$(id -u):$(id -g)" \
@@ -25,7 +28,6 @@ fi
 # Start screen session.
 $LUFFER_HOME/luffer-screen.sh
 
-# After screen session finishes, stop and delete the container.
+# After screen session finishes, stop the container.
 docker stop $LUFFER_IMAGE_NAME > /dev/null 2>&1
-docker rm $LUFFER_IMAGE_NAME > /dev/null 2>&1
 
