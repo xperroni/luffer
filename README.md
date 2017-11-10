@@ -12,9 +12,7 @@ Luffer is a collection of BASH scripts to package software development stacks as
 
 ## Install
 
-1. Clone the project repository;
-2. Copy the contents of the `scripts` folder to a convenient place on your machine;
-3. Create a symlink somewhere in your `PATH` leading to the `luffer.sh` file.
+Clone the project repository, then run the included `./install.sh` script. It will copy script and configuration files to `~/.luffer` and create a symlink from `~/.luffer/luffer.sh` to `~/bin/luffer`. If the later directory isn't in the user's `$PATH`, the script will offer to add it in the user's `~/.bashrc` file.
 
 ## Usage
 
