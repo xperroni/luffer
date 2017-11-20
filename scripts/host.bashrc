@@ -12,8 +12,11 @@ scr_cd() {
 # the last accessed directory.
 alias cd='scr_cd'
 
+# Import Luffer utility functions.
+source "$LUFFER_HOME/luffer-utils.sh"
+
 # Run image host config, if it exists.
-HOST_BASHRC="$LUFFER_IMAGE_DIR/host.bashrc"
+HOST_BASHRC=$(pathto "host.bashrc")
 if [ -e "$HOST_BASHRC" ]
 then
     source $HOST_BASHRC
