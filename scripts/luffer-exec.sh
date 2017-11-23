@@ -8,7 +8,7 @@ export EXEC_BASHRC=$(pathto "exec.bashrc")
 
 if [ -e "$EXEC_BASHRC" ]
 then
-    docker exec -ti $LUFFER_IMAGE_NAME bash -c "cd $(pwd) ; source $EXEC_BASHRC ; $*"
+    docker exec --user="$(id -u):$(id -g)" -ti $LUFFER_IMAGE_NAME bash -c "cd $(pwd) ; source $EXEC_BASHRC ; $*"
 else
-    docker exec -ti $LUFFER_IMAGE_NAME bash -c "cd $(pwd) ; $*"
+    docker exec --user="$(id -u):$(id -g)" -ti $LUFFER_IMAGE_NAME bash -c "cd $(pwd) ; $*"
 fi
