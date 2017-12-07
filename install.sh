@@ -4,9 +4,13 @@
 mkdir -p ~/.luffer
 (cd scripts ; cp -v *.sh host.* ~/.luffer)
 
+# Copy example CARMEN configuration to user's directory.
+mkdir -p ~/.luffer/carmen
+(cd scripts/carmen ; cp -v *.bashrc ~/.luffer/carmen)
+
 # Copy example ROS configuration to user's directory.
-mkdir -p ~/.luffer/osrf/ros/kinetic-desktop-full
-(cd scripts/osrf/ros/kinetic-desktop-full ; cp -v *.bashrc ~/.luffer/osrf/ros/kinetic-desktop-full)
+mkdir -p ~/.luffer/ros
+(cd scripts/ros ; cp -v *.bashrc ~/.luffer/ros)
 
 # Create symbolic link to base luffer script.
 mkdir -p $HOME/bin
