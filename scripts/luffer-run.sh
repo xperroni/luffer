@@ -17,6 +17,7 @@ docker run -it \
     --workdir="$(pwd)" \
     --volume="$LUFFER_HOME:$LUFFER_HOME" \
     --volume="$(pwd):$(pwd)" \
+    --volume="/dev/bus/usb/:/dev/bus/usb" \
     "${@:3}" \
     $IMAGE \
     $START
