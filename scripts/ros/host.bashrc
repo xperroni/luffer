@@ -17,6 +17,11 @@ alias rostopic='luffer exec rostopic'
 
 alias rqt='luffer exec rqt'
 
+# Return the path to the latest ROS log directory.
+function log_latest {
+  echo $LUFFER_IMAGE_HOME/.ros/log/$(ll $LUFFER_IMAGE_HOME/.ros/log/latest | grep -Po '[\w\-]+$')
+}
+
 # Run rosdep init in root mode, but other commands in user mode.
 function rosdep {
     if [ "$1" == "init" ]
