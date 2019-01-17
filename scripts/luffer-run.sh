@@ -15,9 +15,13 @@ docker run -it \
     --net=host \
     --privileged \
     --workdir="$(pwd)" \
+    --group-add dialout \
+    --group-add plugdev \
+    --group-add video \
     --volume="$LUFFER_HOME:$LUFFER_HOME" \
     --volume="$(pwd):$(pwd)" \
-    --volume="/dev/bus/usb/:/dev/bus/usb" \
+    --volume="/dev:/dev" \
+    --volume="/media:/media" \
     "${@:3}" \
     $IMAGE \
     $START
