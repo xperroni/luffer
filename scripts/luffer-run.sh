@@ -14,6 +14,7 @@ docker run -it \
     -e DISPLAY \
     --net=host \
     --privileged \
+    --cap-add=ALL \
     --workdir="$(pwd)" \
     --group-add dialout \
     --group-add plugdev \
@@ -21,6 +22,7 @@ docker run -it \
     --volume="$LUFFER_HOME:$LUFFER_HOME" \
     --volume="$(pwd):$(pwd)" \
     --volume="/dev:/dev" \
+    --volume="/lib/modules:/lib/modules" \
     --volume="/media:/media" \
     "${@:3}" \
     $IMAGE \
