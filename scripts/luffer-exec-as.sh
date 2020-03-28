@@ -8,7 +8,7 @@ export EXEC_BASHRC=$(pathto "exec.bashrc")
 
 # Build the command setup expression, adding path to
 # the execution configuration file as appropriate.
-SETUP="cd $(pwd)"
+SETUP="cd \"$(pwd)\""
 if [ -e "$EXEC_BASHRC" ]
 then
     SETUP="$SETUP ; source $EXEC_BASHRC"

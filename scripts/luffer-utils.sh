@@ -10,6 +10,6 @@ function pathto {
             echo $FILE_PATH
             return
         fi
-        BASE_PATH=$(dirname $BASE_PATH)
+        BASE_PATH=$(dirname "$BASE_PATH")
     done
 }

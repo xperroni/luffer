@@ -20,10 +20,11 @@ docker run -it \
     --group-add plugdev \
     --group-add video \
     --volume="$LUFFER_HOME:$LUFFER_HOME" \
-    --volume="$(pwd):$(pwd)" \
+    --volume="$(pwd)":"$(pwd)" \
     --volume="/dev:/dev" \
     --volume="/lib/modules:/lib/modules" \
     --volume="/media:/media" \
+    --volume="/var/run/dbus:/var/run/dbus" \
     "${@:3}" \
     $IMAGE \
     $START
