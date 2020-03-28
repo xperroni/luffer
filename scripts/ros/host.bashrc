@@ -13,6 +13,7 @@ alias rospack='luffer exec rospack'
 alias rosparam='luffer exec rosparam'
 alias rosrun='luffer exec rosrun'
 alias rosservice='luffer exec rosservice'
+alias rossrv='luffer exec rossrv'
 alias rostopic='luffer exec rostopic'
 
 alias rqt='luffer exec rqt'

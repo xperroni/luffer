@@ -2,7 +2,7 @@
 export QT_X11_NO_MITSHM=1
 
 # Setup ROS environment
-source /opt/ros/kinetic/setup.bash
+source /opt/ros/$1/setup.bash
 
 # Setup development environment
 if [ -e "devel/setup.bash" ]
